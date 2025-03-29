@@ -1,0 +1,119 @@
+import { Canvas, Controls, Meta, Story } from "@storybook/blocks"
+
+import ResponsiveList from "../../src/ResponsiveList"
+import * as ResponsiveListStories from "./ResponsiveList.stories"
+
+<Meta of={ResponsiveListStories} />
+
+# ResponsiveList
+
+The `ResponsiveList` component is an adaptive table that displays properly on all devices. It offers a classic column-based desktop view and an optimized card-based mobile view.
+
+## Key Features
+
+- **Responsive design** - Automatically adapts display between desktop and mobile screens
+- **Style customization** - Allows customization of even and odd row styles
+- **Custom rendering** - Enables defining custom rendering for each cell
+- **Configurable actions** - Ability to add action buttons for each row
+- **Loading state** - Display of a customizable loading indicator
+
+## Installation
+
+```bash
+# With npm
+npm install twind-responsive-list
+
+# With yarn
+yarn add twind-responsive-list
+
+# With bun
+bun add twind-responsive-list
+
+```
+
+## React Component
+
+```tsx
+import { ResponsiveList } from "twind-responsive-list"
+
+const MyComponent = () => {
+  const users = [
+    { id: 1, name: "John Doe", email: "john@example.com", status: "Active" },
+    { id: 2, name: "Jane Smith", email: "jane@example.com", status: "Inactive" }
+  ]
+
+  return (
+    <ResponsiveList
+      items={users}
+      fields={["id", "name", "email", "status"]}
+      actions={(user) => (
+        <button onClick={() => handleEdit(user.id)}>Edit</button>
+      )}
+    />
+  )
+}
+```
+
+### Examples
+
+#### Default View
+
+<Canvas of={ResponsiveListStories.Default} />
+
+#### Custom Row Styles
+
+<Canvas of={ResponsiveListStories.CustomRowStyles} />
+
+#### Custom Cell Rendering
+
+<Canvas of={ResponsiveListStories.CustomRenderers} />
+
+#### Loading State
+
+<Canvas of={ResponsiveListStories.Loading} />
+
+#### Props
+
+<Controls />
+
+### Responsive Behavior
+
+The ResponsiveList component automatically adapts to screen size:
+
+On large screens (≥ md breakpoint), it displays as a standard table
+On small screens (< md breakpoint), it displays as a list of cards for each item
+
+### Advanced Usage
+
+#### Custom Cell Rendering
+
+For complete control over cell rendering, use the values prop:
+
+```tsx
+<ResponsiveList
+  items={users}
+  fields={["id", "name", "status"]}
+  values={[
+    (user) => <span className="font-bold">#{user.id}</span>,
+    (user) => <span>{user.name}</span>,
+    (user) => (
+      <span
+        className={user.status === "Active" ? "text-green-500" : "text-red-500"}
+      >
+        {user.status}
+      </span>
+    )
+  ]}
+/>
+```
+
+#### Using Custom Loading Component
+
+```tsx
+<ResponsiveList
+  items={users}
+  fields={["id", "name"]}
+  isLoading={isLoadingData}
+  loadingComponent={<div className="animate-pulse">Loading data...</div>}
+/>
+```

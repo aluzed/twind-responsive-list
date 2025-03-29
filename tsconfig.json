@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    "noEmit": false,
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "declarationDir": "dist",
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": false /* Changez cette ligne */,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+
+    /* Output */
+    "outDir": "./dist"
+  },
+  "include": ["src"],
+  "exclude": ["**/*.test.ts", "**/*.test.tsx", "src/setupTests.ts"]
+}
