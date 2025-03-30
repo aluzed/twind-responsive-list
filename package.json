@@ -1,7 +1,7 @@
 {
   "name": "twind-responsive-list",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "main": "./dist/twind-responsive-list.umd.js",
   "module": "./dist/twind-responsive-list.es.js",

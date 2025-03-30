@@ -1,0 +1,1 @@
+@tailwind base;@tailwind components;@tailwind utilities;.dark .hover-row:hover{background-color:#e5e7eb}.dark .hover-row:hover .row-cell{color:#374151}

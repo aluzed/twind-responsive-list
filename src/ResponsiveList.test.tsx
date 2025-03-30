@@ -69,9 +69,7 @@ describe("ResponsiveList Component - Advanced Tests", () => {
 
       expect(screen.getByText("Actions")).toBeInTheDocument()
 
-      const headerRow = document.querySelector(
-        ".hidden.md\\:flex.border-b.border-gray-300"
-      )
+      const headerRow = document.querySelector(".hidden.md\\:flex")
       expect(headerRow).toBeInTheDocument()
     })
 

@@ -101,11 +101,11 @@ const ResponsiveList = <T,>({
             {/* Desktop */}
             <div
               className={cn(
-                "responsive-list-row-desktop-row hidden md:flex items-center border-b",
+                "responsive-list-row-desktop-row hidden md:flex items-center border-b dark:text-white hover-row",
                 {
-                  "border-gray-200 hover:bg-gray-50":
+                  "border-gray-200 hover:bg-gray-100 dark:bg-gray-100 dark:hover:bg-gray-200":
                     !lineClassNameOdd && itemIndex % 2 !== 0,
-                  "border-white hover:bg-gray-50":
+                  "border-white hover:bg-gray-100 dark:bg-gray-200 dark:hover:bg-gray-300":
                     !lineClassNameOdd && itemIndex % 2 === 0,
                   lineClassNameOdd:
                     Boolean(lineClassNameOdd) && itemIndex % 2 !== 0,
@@ -118,7 +118,7 @@ const ResponsiveList = <T,>({
               {fields.map((field, fieldIndex) => (
                 <div
                   key={field.toString()}
-                  className="responsive-list-row-desktop-col p-3 truncate"
+                  className="responsive-list-row-desktop-col p-3 truncate row-cell"
                   style={{ width: `${columnWidth}%` }}
                   role="cell"
                 >
@@ -131,7 +131,7 @@ const ResponsiveList = <T,>({
               ))}
               {actions && (
                 <div
-                  className="responsive-list-row-desktop-col p-3 flex justify-end"
+                  className="responsive-list-row-desktop-col p-3 flex justify-end row-cell"
                   style={{ width: `${columnWidth}%` }}
                   role="cell"
                 >
